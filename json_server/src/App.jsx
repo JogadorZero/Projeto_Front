@@ -13,6 +13,8 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
+  const[usuario, setUsuario] = useState("")
+  const[senha, setSenha] = useState("")
   const [edit, setEdit] = useState(false);
 
   const url = 'http://localhost:3000/products';
@@ -104,7 +106,6 @@ function App() {
   const handleName = (e) => {setName(e.target.value)};
   const handlePrice = (e) => {setPrice(e.target.value)};
   const handleStock = (e) => {setStock(e.target.value)};
-
   const handleUsuario = (e) => {setUsuario(e.target.value)};
   const handleSenha = (e) => {setSenha(e.target.value)};
 
