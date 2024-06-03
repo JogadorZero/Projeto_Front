@@ -5,7 +5,7 @@ export default function Login({saveProduct,usuario, senha, handleSenha, handleUs
     return (
         <>
             <div className='container'>
-        <h2>Cadastro de Produtos</h2>
+        <h2>Cadastro de Usuários</h2>
         <form onSubmit={(e) => saveProduct(e)}>
             <label className='form-label' htmlFor="usuario">Usuario</label>
             <input className='form-input' value={usuario} type="text" name="usuario" onChange={(e) => handleUsuario(e)} required/>
