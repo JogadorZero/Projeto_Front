@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import ProductTable from './components/ProductTable'
 import ProductForm from './components/ProductForm'
+import Login from './components/Login'
 
 // CRUD COM JSON SERVER
 
@@ -104,16 +105,12 @@ function App() {
   const handlePrice = (e) => {setPrice(e.target.value)};
   const handleStock = (e) => {setStock(e.target.value)};
 
+  const handleUsuario = (e) => {setUsuario(e.target.value)};
+  const handleSenha = (e) => {setSenha(e.target.value)};
+
   return (
     <>
-     <h2>CRUD com JSON Server</h2>
-     <div>
-        {
-          products.length > 0 ? <ProductTable products={products} deleteProduct={deleteProduct} editProduct={getProductById} /> : <h3 style={{marginBottom: '30px'}}>Nenhum produto cadastrado...</h3>
-        }
-      </div>
-
-      <ProductForm name={name} price={price} stock={stock} handleName={handleName} handlePrice={handlePrice} handleStock={handleStock} saveProduct={saveProduct}/>
+      <Login usuario={usuario} senha={senha} handleUsuario={handleUsuario} handleSenha={handleSenha}/>
     </>
   )
 }
