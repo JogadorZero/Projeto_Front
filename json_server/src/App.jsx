@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import ProductTable from './components/ProductTable'
 import ProductForm from './components/ProductForm'
-import Login from './components/Login'
+import Login from './routes/Login'
+import Home from './routes/Home'
+import NavBar from './routes/NavBar'
 
 // CRUD COM JSON SERVER
 
@@ -13,8 +15,6 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
-  const[usuario, setUsuario] = useState("")
-  const[senha, setSenha] = useState("")
   const [edit, setEdit] = useState(false);
 
   const url = 'http://localhost:3000/products';
@@ -106,12 +106,11 @@ function App() {
   const handleName = (e) => {setName(e.target.value)};
   const handlePrice = (e) => {setPrice(e.target.value)};
   const handleStock = (e) => {setStock(e.target.value)};
-  const handleUsuario = (e) => {setUsuario(e.target.value)};
-  const handleSenha = (e) => {setSenha(e.target.value)};
 
   return (
     <>
-      <Login usuario={usuario} senha={senha} handleUsuario={handleUsuario} handleSenha={handleSenha}/>
+      
+      <NavBar/>
     </>
   )
 }
