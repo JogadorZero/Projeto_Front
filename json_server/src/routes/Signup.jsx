@@ -16,9 +16,9 @@ export default function Signup() {
             <h2>Criar uma Conta</h2>
             <form onSubmit={handleSignup}>
                 <label className='form-label' htmlFor='usuario'>Usuário</label>
-                <input className='form-label' value={user} type='text' name='usuario' onChange={(e) => setUser(e.target.value)} required />
+                <input className='form-input' value={user} type='text' name='usuario' onChange={(e) => setUser(e.target.value)} required />
                 <label className='form-label' htmlFor='senha'>Senha</label>
-                <input className='form-label' value={passwaord} type='password' name='senha' onChange={(e) => setPassword(e.target.value)} required />
+                <input className='form-input' value={passwaord} type='password' name='senha' onChange={(e) => setPassword(e.target.value)} required />
                 <input className='form-submit' type='submit' value='Casdastrar' />
             </form>
         </div>
