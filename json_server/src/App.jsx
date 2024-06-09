@@ -6,6 +6,7 @@ import ProductForm from './components/ProductForm'
 import Login from './routes/Login'
 import Home from './routes/Home'
 import NavBar from './routes/NavBar'
+import { Outlet } from 'react-router-dom'
 
 // CRUD COM JSON SERVER
 
@@ -109,8 +110,8 @@ function App() {
 
   return (
     <>
-      
       <NavBar/>
+      <Outlet /> {/*Onde componentes filhos serão renderizados*/}
     </>
   )
 }
