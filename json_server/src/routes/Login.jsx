@@ -11,7 +11,7 @@ export default function Login(){
     return (
         <>
             <div className='container'>
-                <h2>Cadastro de Usuários</h2>
+                <h2>Fazer Login</h2>
                 <form onSubmit={saveUser}>
                     <label className='form-label' htmlFor="usuario">Usuario</label>
                     <input className='form-input' value={user} type="text" name="usuario" onChange={(e) => setUser(e.target.value)} required/>

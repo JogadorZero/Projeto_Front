@@ -13,7 +13,7 @@ export default function Signup() {
 
     return (
         <div className='container'>
-            <h2>Cadastro de Usuário</h2>
+            <h2>Criar uma Conta</h2>
             <form onSubmit={handleSignup}>
                 <label className='form-label' htmlFor='usuario'>Usuário</label>
                 <input className='form-label' value={user} type='text' name='usuario' onChange={(e) => setUser(e.target.value)} required />
