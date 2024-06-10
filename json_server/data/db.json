@@ -1,10 +1,20 @@
 {
-  "products": [
+  "users": [
     {
-      "name": "Uva",
-      "price": "15",
-      "stock": "30",
-      "id": "630f"
+      "id": "ba37",
+      "user": "lucas",
+      "password": "123"
+    },
+    {
+      "id": "aa4b",
+      "user": "paulo",
+      "password": "1234"
+    },
+    {
+      "id": "a746",
+      "user": "kaique",
+      "password": "123"
     }
-  ]
+  ],
+  "products": []
 }

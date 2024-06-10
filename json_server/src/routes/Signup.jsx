@@ -1,26 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function Signup() {
-    const [user, setUser] = useState("")
-    const [passwaord, setPassword] = useState("")
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
 
-    //Cadastrar usuário
-    const handleSignup = (e) => {
-        e.preventDefault()
+  const saveSignup = async (e) => {
+    e.preventDefault();
+    const newUser = { user, password };
 
-        console.log("Usuário cadastrado:", { user, password })
+    const clearForm1 = () => {
+        setUser("")
+        setPassword("")
+      }
+
+    const res = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+    });
+
+    if (res.ok) {
+      console.log("Usuário cadastrado:", newUser);
+      // Redirecionar ou limpar formulário após sucesso
+    } else {
+      console.error("Erro ao cadastrar usuário");
     }
-
-    return (
-        <div className='container'>
-            <h2>Criar uma Conta</h2>
-            <form onSubmit={handleSignup}>
-                <label className='form-label' htmlFor='usuario'>Usuário</label>
-                <input className='form-input' value={user} type='text' name='usuario' onChange={(e) => setUser(e.target.value)} required />
-                <label className='form-label' htmlFor='senha'>Senha</label>
-                <input className='form-input' value={passwaord} type='password' name='senha' onChange={(e) => setPassword(e.target.value)} required />
-                <input className='form-submit' type='submit' value='Casdastrar' />
-            </form>
-        </div>
-    )
-}
+    clearForm1()
+    setEdit(false)
+  };
