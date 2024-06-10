@@ -9,10 +9,10 @@ export default function Home(){
             <p>Escolha uma opção:</p>
             <div>
                 <Link to="/login">
-                    <button>Entrar</button>
+                    <input className='form-submit' type='submit' value='Entrar' />
                 </Link>
                 <Link to="/signup">
-                    <button>Cadastrar</button>
+                <input className='form-submit' type='submit' value='Cadastrar' />
                 </Link>
             </div>
         </div>
