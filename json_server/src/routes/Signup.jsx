@@ -30,17 +30,3 @@ export default function Signup() {
     clearForm1()
     setEdit(false)
   };
-
-  return (
-    <div className='container'>
-      <h2>Criar uma Conta</h2>
-      <form onSubmit={saveSignup}>
-        <label className='form-label' htmlFor='usuario'>Usuário</label>
-        <input className='form-input' value={user} type='text' name='usuario' onChange={(e) => setUser(e.target.value)} required />
-        <label className='form-label' htmlFor='senha'>Senha</label>
-        <input className='form-input' value={password} type='password' name='senha' onChange={(e) => setPassword(e.target.value)} required />
-        <input className='form-submit' type='submit' value='Cadastrar' />
-      </form>
-    </div>
-  );
-}
