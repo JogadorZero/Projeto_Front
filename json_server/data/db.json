@@ -1,17 +1,12 @@
 {
   "users": [
     {
-      "id": "ba37",
+      "id": "6d58",
       "user": "lucas",
       "password": "123"
     },
     {
-      "id": "aa4b",
-      "user": "paulo",
-      "password": "1234"
-    },
-    {
-      "id": "a746",
+      "id": "6a6b",
       "user": "kaique",
       "password": "123"
     }

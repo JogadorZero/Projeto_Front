@@ -6,6 +6,9 @@ import Home from './routes/Home.jsx'
 import Login from './routes/Login.jsx'
 import Signup from './routes/Signup.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import ProductForm from './components/ProductForm.jsx'
+import RotaProtegida from './components/RotaProtegida.jsx'
+import { AuthProvider } from './context/Auth';
 
 const router = createBrowserRouter([
   {
@@ -22,11 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'login',
-        element: <Login />,
+        element: <Login />,//Rota para a tela de Login
       },
       {
         path: 'signup',
         element: <Signup />, //Rota para a tela de Cadastro
+      },
+      {
+        path: 'product-table',
+        element: (
+          <RotaProtegida>
+            <ProductForm />
+          </RotaProtegida>
+        )
       }
     ],
   },
@@ -34,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);

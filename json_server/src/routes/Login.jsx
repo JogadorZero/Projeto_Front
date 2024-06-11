@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/Auth';
 
 export default function Login() {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+  const { login } = useAuth();
 
   const saveLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const res = await fetch(`http://localhost:3000/users?user=${user}&password=${password}`);
-    const data = await res.json();
+    const res = await fetch(`http://localhost:3000/users?user=${user}&password=${password}`)
+    const data = await res.json()
 
+    // Atualizar estado de autenticação e redirecionar
     if (data.length > 0) {
-      console.log("Usuário logado:", data[0]);
-      // Atualizar estado de autenticação e redirecionar
+      console.log("Usuário logado:", data[0])
+      login();
+      // Redirecionar para a página de cadastro de produto
+      navigate('/product-table'); // Atualize para a rota correta do seu formulário de produtos
     } else {
-      console.error("Usuário ou senha incorretos");
+      console.error("Usuário ou senha incorretos")
     }
-  };
+  }
 
   return (
     <div className='container'>
@@ -29,5 +36,5 @@ export default function Login() {
         <input className='form-submit' type="submit" value="Entrar" />
       </form>
     </div>
-  );
+  )
 }
