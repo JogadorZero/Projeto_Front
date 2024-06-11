@@ -1,4 +1,5 @@
 import classes from './ProductTable.module.css'
+import React from 'react'
 
 export default function ProductTable({products, deleteProduct, editProduct}) {
 
