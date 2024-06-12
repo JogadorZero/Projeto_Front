@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import ProductTable from './components/ProductTable'
 import ProductForm from './components/ProductForm'
-import Login from './routes/Login'
-import Home from './routes/Home'
 import NavBar from './routes/NavBar'
 import { Outlet } from 'react-router-dom'
 

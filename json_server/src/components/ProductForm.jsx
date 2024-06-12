@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './ProductForm.css'
 
 export default function Neymar(){
