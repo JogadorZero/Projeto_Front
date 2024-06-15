@@ -1,58 +1,56 @@
 import { useState, useEffect } from 'react'
-
 import './App.css'
 import ProductTable from './components/ProductTable'
 import ProductForm from './components/ProductForm'
 import NavBar from './routes/NavBar'
-import { Outlet } from 'react-router-dom'
-
-// CRUD COM JSON SERVER
+import { Outlet, useNavigate } from 'react-router-dom'
 
 function App() {  
-  const [products, setProducts] = useState([]);
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [stock, setStock] = useState("");
-  const [edit, setEdit] = useState(false);
+  const [products, setProducts] = useState([])
+  const [id, setId] = useState("")
+  const [name, setName] = useState("")
+  const [price, setPrice] = useState("")
+  const [stock, setStock] = useState("")
+  const [edit, setEdit] = useState(false)
+  const navigate = useNavigate()
 
-  const url = 'http://localhost:3000/products';
+  const url = 'http://localhost:3000/products'
 
   useEffect(() => {
     // Lista todos os produtos:
     const getProductsList = async() => {
-      const res = await fetch(url);
-      const data = await res.json();
-      setProducts(data);
+      const res = await fetch(url)
+      const data = await res.json()
+      setProducts(data)
     }
 
-    getProductsList();
+    getProductsList()
 
   }, []);
 
   const clearForm = () => {
-    setName("");
-    setPrice("");
-    setStock("");
+    setName("")
+    setPrice("")
+    setStock("")
   }
 
   // Busca apenas um produto pelo seu id:
   const getProductById = async(id) => {
     // Faz a requisição http
-    const res = await fetch(url + `/${id}`);
-    const data = await res.json();
+    const res = await fetch(url + `/${id}`)
+    const data = await res.json()
     // Carrega os dados no formulário para edição:
     setName(data.name)
-    setPrice(data.price);
-    setStock(data.stock);
-    setId(data.id);
+    setPrice(data.price)
+    setStock(data.stock)
+    setId(data.id)
 
     // Habilita edição:
-    setEdit(true);
+    setEdit(true)
   }
 
   const saveProduct = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const saveRequestParams = {
       method: edit ? "PUT" : "POST",
       headers: {
@@ -62,10 +60,10 @@ function App() {
     }
 
     // Cria url para buscar todos ou apenas um produto
-    const save_url = edit ? url + `/${id}` : url;
+    const save_url = edit ? url + `/${id}` : url
 
     // Faz a requisição http
-    const res = await fetch(save_url, saveRequestParams);
+    const res = await fetch(save_url, saveRequestParams)
 
     // Se for cadastro de produto novo:
     if(!edit) { 
@@ -109,6 +107,20 @@ function App() {
   return (
     <>
       <NavBar/>
+      <ProductForm
+        name={name}
+        price={price}
+        stock={stock}
+        handleName={handleName}
+        handlePrice={handlePrice}
+        handleStock={handleStock}
+        saveProduct={saveProduct}
+      />
+      <ProductTable
+        products={products}
+        deleteProduct={deleteProduct}
+        editProduct={getProductById}
+      />
       <Outlet /> {/*Onde componentes filhos serão renderizados*/}
     </>
   )
