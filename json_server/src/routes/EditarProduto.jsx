@@ -1,7 +1,7 @@
 import ProductForm from "../components/ProductForm"
 import ProductTable from "../components/ProductTable"
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+
 
 
 export default function EditarProduto(){
@@ -12,7 +12,7 @@ export default function EditarProduto(){
     const [price, setPrice] = useState("")
     const [stock, setStock] = useState("")
     const [edit, setEdit] = useState(false)
-    const navigate = useNavigate()
+    
 
     const url = 'http://localhost:3000/products'
 

@@ -2,7 +2,7 @@
 import './ProductForm.css'
 import { Link } from 'react-router-dom'
 
-function ProductForm({name, price, stock, handleName, handlePrice, handleStock, saveProduct}) {
+function ProductForm({ name, price, stock, handleName, handlePrice, handleStock, saveProduct}) {
     return (
         <div className='container'>
         <h2>Cadastro de Produtos</h2>
