@@ -9,6 +9,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ProductForm from './components/ProductForm.jsx'
 import RotaProtegida from './components/RotaProtegida.jsx'
 import { AuthProvider } from './context/Auth';
+import ProductTable from './components/ProductTable.jsx'
+import CadastroProduto from './routes/CadastroProduto.jsx'
+import TabelaProdutos from './routes/TabelaProdutos.jsx'
+import EditarProduto from './routes/EditarProduto.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,10 +39,27 @@ const router = createBrowserRouter([
         path: 'product-table',
         element: (
           <RotaProtegida>
-            <ProductForm />
+            <CadastroProduto/>
+          </RotaProtegida>
+        )
+      },
+      {
+        path: 'product-form',
+        element: (
+          <RotaProtegida>
+            <TabelaProdutos/>
+          </RotaProtegida>
+        )
+      },
+      {
+        path: 'edit-product',
+        element: (
+          <RotaProtegida>
+            <EditarProduto/>
           </RotaProtegida>
         )
       }
+
     ],
   },
 ])

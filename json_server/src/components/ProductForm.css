@@ -25,6 +25,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
   }
   
   .form-submit {
@@ -39,4 +40,8 @@
   
   .form-submit:hover {
     background-color: #0056b3;
+  }
+
+  .espaco{
+    margin-top: 10px;
   }

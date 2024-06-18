@@ -1,5 +1,6 @@
 import classes from './ProductTable.module.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProductTable({products, deleteProduct, editProduct}) {
 
@@ -12,6 +13,7 @@ export default function ProductTable({products, deleteProduct, editProduct}) {
     }
 
     return (
+        <>
         <div className={classes.table_container}>
             <h2>Lista de Produtos</h2>
             <table className={classes.table}>
@@ -36,9 +38,21 @@ export default function ProductTable({products, deleteProduct, editProduct}) {
                             <button onClick={() => deleteProduct(prod.id)}>Excluir</button>
                         </td>
                         </tr>
+
                     ))}
                 </tbody>
             </table>
+            <div className='espaco'>
+            <Link to="/">
+                <input className='form-submit' type='submit' value='voltar' />
+            </Link>
+            </div>
+            <div className='espaco'>
+            <Link to="/product-form">
+                <input className='form-submit' type='submit' value='Cadastrar' />
+            </Link>
+            </div>
         </div>
+        </> 
     )
 }

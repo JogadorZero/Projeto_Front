@@ -1,5 +1,6 @@
 
 import './ProductForm.css'
+import { Link } from 'react-router-dom'
 
 function ProductForm({name, price, stock, handleName, handlePrice, handleStock, saveProduct}) {
     return (
@@ -13,6 +14,12 @@ function ProductForm({name, price, stock, handleName, handlePrice, handleStock, 
             <label className='form-label' htmlFor="estoque">Estoque:</label>
             <input className='form-input' value={stock} type="number" name="estoque" onChange={(e) => handleStock(e)} required/>
             <input className='form-submit' type="submit" value="Cadastrar" />
+            <div className='espaco'>
+            <Link to="/product-table">
+                <input className='form-submit' type='submit' value='voltar' />
+            </Link>
+            </div>
+
         </form>
       </div>
     )
