@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import Login from './Login';
+import { Link } from 'react-router-dom'
 
 export default function Signup() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-
   const saveSignup = async (e) => {
     e.preventDefault();
     const newUser = { user, password };
@@ -24,6 +25,7 @@ export default function Signup() {
     if (res.ok) {
       console.log("Usuário cadastrado:", newUser);
       // Redirecionar ou limpar formulário após sucesso
+      
     } else {
       console.error("Erro ao cadastrar usuário");
     }
@@ -39,7 +41,7 @@ export default function Signup() {
         <input className='form-input' value={user} type="text" name="usuario" onChange={(e) => setUser(e.target.value)} required />
         <label className='form-label' htmlFor="senha">Senha</label>
         <input className='form-input' value={password} type="password" name="senha" onChange={(e) => setPassword(e.target.value)} required />
-        <input className='form-submit' type="submit" value="Cadastrar" />
+        <input className='form-submit' type='submit' value='Cadastrar' />
       </form>
     </div>
   );
