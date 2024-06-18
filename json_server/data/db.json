@@ -14,6 +14,11 @@
       "id": "5e87",
       "user": "pau",
       "password": "lo"
+    },
+    {
+      "id": "38c6",
+      "user": "rhyan",
+      "password": "123"
     }
   ],
   "products": [
@@ -34,12 +39,6 @@
       "name": "paulin",
       "price": "1.99",
       "stock": "1"
-    },
-    {
-      "id": "ca5f",
-      "name": "paulin2",
-      "price": "2",
-      "stock": "2"
     }
   ]
 }
