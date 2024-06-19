@@ -1,4 +1,4 @@
-import ProductForm from "../components/ProductForm"
+
 import ProductTable from "../components/ProductTable"
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -108,10 +108,11 @@ export default function CadastroProduto (){
     
     return(
         <>
-      <ProductTable
-        products={products}
-        deleteProduct={deleteProduct}
-        editProduct={getProductById}/>
+        <div>
+      {
+          products.length > 0 ? <ProductTable products={products} deleteProduct={deleteProduct} editProduct={getProductById} /> : <h3 style={{marginBottom: '30px'}}>Nenhum produto cadastrado...</h3>
+        }
+      </div>
         </>
     )
 }
