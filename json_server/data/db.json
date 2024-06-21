@@ -33,6 +33,12 @@
       "name": "Kaique demetrio ",
       "price": "1",
       "stock": "1"
+    },
+    {
+      "id": "9474",
+      "name": "pera",
+      "price": "3",
+      "stock": "2"
     }
   ]
 }
