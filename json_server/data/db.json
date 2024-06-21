@@ -19,26 +19,43 @@
       "id": "38c6",
       "user": "rhyan",
       "password": "123"
+    },
+    {
+      "id": "e7dd",
+      "user": "mbappe",
+      "password": "1234"
     }
   ],
   "products": [
     {
-      "id": "9adb",
+      "id": "dde9",
       "name": "maça",
-      "price": "1",
-      "stock": "1"
-    },
-    {
-      "id": "e3df",
-      "name": "Kaique demetrio ",
-      "price": "1",
-      "stock": "1"
-    },
-    {
-      "id": "9474",
-      "name": "pera",
       "price": "3",
-      "stock": "2"
+      "stock": "10"
+    },
+    {
+      "id": "8572",
+      "name": "pera",
+      "price": "4",
+      "stock": "15"
+    },
+    {
+      "id": "1924",
+      "name": "uva",
+      "price": "2",
+      "stock": "20"
+    },
+    {
+      "id": "1876",
+      "name": "melancia",
+      "price": "6",
+      "stock": "40"
+    },
+    {
+      "id": "666a",
+      "name": "kiwi",
+      "price": "10",
+      "stock": "25"
     }
   ]
 }

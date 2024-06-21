@@ -43,7 +43,7 @@ export default function CadastroProduto (){
   
       return (
           <div>
-              {products.length > 0 ? (
+              {products.length >= 0 ? (
                   <ProductTable products={products} deleteProduct={deleteProduct} editProduct={editProduct} />
   
               ) : (
