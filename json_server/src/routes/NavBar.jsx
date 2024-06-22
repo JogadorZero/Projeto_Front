@@ -11,9 +11,15 @@ export default function NavBar(){
 
     return(
         <nav className='navbar'>
-            <Link to='/' className='nav-link'>Início</Link>
-            <Link to='/signup' className='nav-link'>Cadastrar</Link>
-            <Link to='/product-table' className='nav-link'>Produtos</Link>
+            <div className='navbar-left'>
+                <Link to='/'>
+                    <img src='public\images\logo.jpeg' alt='Inicio' className='navbar-logo' />
+                </Link>
+            </div>
+            <div className='navbar-right'>
+                <Link to='/signup' className='nav-link'>Cadastrar</Link>
+                <Link to='/login' className='nav-link'>Login</Link>
+            </div>
         </nav>
     )
 }
