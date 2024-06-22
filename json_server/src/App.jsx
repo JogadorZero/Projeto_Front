@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import ProductTable from './components/ProductTable'
-import ProductForm from './components/ProductForm'
 import NavBar from './routes/NavBar'
-import { Outlet, useNavigate } from 'react-router-dom'
+import Footer from './routes/Footer'
+import { Outlet, useLocation } from 'react-router-dom'
 
-function App() {  
+export default function App() {  
+  const location = useLocation()
   
   return (
     <>
       <NavBar/>
-      <Outlet /> {/*Onde componentes filhos serão renderizados*/}
+      <div className='main-contenct'>
+        <Outlet />
+      </div>
+      {location.pathname !== '/login' && <Footer />}
     </>
   )
 }
-
-export default App

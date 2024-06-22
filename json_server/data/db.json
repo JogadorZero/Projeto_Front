@@ -24,6 +24,11 @@
       "id": "e7dd",
       "user": "mbappe",
       "password": "1234"
+    },
+    {
+      "id": "4e88",
+      "user": "lucas",
+      "password": "123"
     }
   ],
   "products": [
@@ -46,16 +51,10 @@
       "stock": "20"
     },
     {
-      "id": "1876",
-      "name": "melancia",
-      "price": "6",
-      "stock": "40"
-    },
-    {
-      "id": "666a",
-      "name": "kiwi",
-      "price": "10",
-      "stock": "25"
+      "id": "66d0",
+      "name": "Banana",
+      "price": "5",
+      "stock": "20"
     }
   ]
 }
