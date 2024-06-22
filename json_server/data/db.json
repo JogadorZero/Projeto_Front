@@ -29,15 +29,14 @@
       "id": "4e88",
       "user": "lucas",
       "password": "123"
+    },
+    {
+      "id": "7592",
+      "user": "iara",
+      "password": "123"
     }
   ],
   "products": [
-    {
-      "id": "dde9",
-      "name": "maça",
-      "price": "3",
-      "stock": "10"
-    },
     {
       "id": "8572",
       "name": "pera",
@@ -45,16 +44,16 @@
       "stock": "15"
     },
     {
-      "id": "1924",
-      "name": "uva",
-      "price": "2",
-      "stock": "20"
-    },
-    {
       "id": "66d0",
       "name": "Banana",
       "price": "5",
       "stock": "20"
+    },
+    {
+      "id": "0351",
+      "name": "Caqui",
+      "price": "4.00",
+      "stock": "30"
     }
   ]
 }

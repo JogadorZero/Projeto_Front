@@ -1,21 +1,10 @@
-import { Link } from 'react-router-dom'
-
+import React from "react"
+import './Home.css'
 
 export default function Home(){
     return(
-        <div>
+        <div className="home-container">
             <h2>Bem-vindo!</h2>
-            <p>Escolha uma opção:</p>
-            <div className='espaco'>
-                <Link to="/login">
-                    <input className='form-submit' type='submit' value='Entrar' />
-                </Link>
-                </div>
-                <div className='espaco'>
-                <Link to="/signup">
-                <input className='form-submit' type='submit' value='Cadastrar' />
-                </Link>
-            </div>
         </div>
     )
 }
