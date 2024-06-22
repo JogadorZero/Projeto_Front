@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Login from './Login';
-import { Link } from 'react-router-dom'
+import './Signup.css'
 
 export default function Signup() {
   const [user, setUser] = useState("");
@@ -34,7 +33,7 @@ export default function Signup() {
   };
 
   return (
-    <div className='container'>
+    <div className='signup-container'>
       <h2>Criar Conta</h2>
       <form onSubmit={saveSignup}>
         <label className='form-label' htmlFor="usuario">Usuário</label>

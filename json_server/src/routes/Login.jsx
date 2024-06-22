@@ -1,6 +1,7 @@
+import './Login.css'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/Auth';
+import { useAuth } from '../context/Auth'
 
 export default function Login() {
   const [user, setUser] = useState("")
@@ -26,7 +27,7 @@ export default function Login() {
   }
 
   return (
-    <div className='container'>
+    <div className='login-container'>
       <h2>Fazer Login</h2>
       <form onSubmit={saveLogin}>
         <label className='form-label' htmlFor="usuario">Usuário</label>

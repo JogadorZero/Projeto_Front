@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom"
 export default function NavBar(){
     const location = useLocation()
 
-    if (location.pathname === '/login') {
+    if (location.pathname === '/login' || location.pathname === '/signup') {
         return null
     }
 
