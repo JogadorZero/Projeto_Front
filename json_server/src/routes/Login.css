@@ -66,3 +66,7 @@
   margin-top: 15px; /* Espaçamento acima do botão */
   text-decoration: none;
 }
+
+.voltar-redirect-button:hover {
+  background-color: #000000; /* Cor azul mais escura para o hover */
+}
