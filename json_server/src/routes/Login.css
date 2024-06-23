@@ -29,17 +29,28 @@
     box-sizing: border-box;
   }
   
-  .form-submit {
-    background-color: #ea2e3b;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  .form-input {
+    width: 100%; /* Largura total */
+    padding: 8px; /* Padding interno */
+    margin-bottom: 10px; /* Espaço abaixo do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Box sizing para incluir padding e borda na largura total */
   }
   
   .form-submit:hover {
     background-color: #500e13;
   }
+
+.signup-text-link {
+  color: #007bff; /* Cor azul padrão para o link */
+  display: block; /* Faz o link aparecer em uma nova linha */
+  text-decoration: none; /* Remove o sublinhado do link */
+  font-size: 0.8rem; /* Tamanho da fonte do link */
+  margin-top: 10px; /* Espaço acima do link */
+  margin-bottom: 20px; /* Espaço abaixo do link antes do botão de 'Entrar' */
+}
   
+.signup-text-link:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}

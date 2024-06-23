@@ -2,6 +2,7 @@ import './Login.css'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/Auth'
+import { Link } from "react-router-dom"
 
 export default function Login() {
   const [user, setUser] = useState("")
@@ -36,6 +37,7 @@ export default function Login() {
         <input className='form-input' value={password} type="password" name="senha" onChange={(e) => setPassword(e.target.value)} required />
         <input className='form-submit' type="submit" value="Entrar" />
       </form>
+      <Link to='/signup' className='signup-text-link'>Não tem uma conta? Cadastre-se</Link>
     </div>
   )
 }
