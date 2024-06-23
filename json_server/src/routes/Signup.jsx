@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Signup.css'
+import { Link } from "react-router-dom"
 
 export default function Signup() {
   const [user, setUser] = useState("")
@@ -42,6 +43,7 @@ export default function Signup() {
         <input className='form-input' value={password} type="password" name="senha" onChange={(e) => setPassword(e.target.value)} required />
         <input className='form-submit' type='submit' value='Cadastrar' />
       </form>
+      <Link to='/login' className='signup-text-link'>Já tem uma conta? Entre</Link>
     </div>
   );
 }
