@@ -10,6 +10,10 @@ export default function Login() {
   const navigate = useNavigate()
   const { login } = useAuth()
 
+  const handleVoltarRedirect = () => {
+    navigate('/')
+  }
+
   const saveLogin = async (e) => {
     e.preventDefault()
 
@@ -35,6 +39,9 @@ export default function Login() {
         <input className='form-input' value={user} type="text" name="usuario" onChange={(e) => setUser(e.target.value)} required />
         <label className='form-label' htmlFor="senha">Senha</label>
         <input className='form-input' value={password} type="password" name="senha" onChange={(e) => setPassword(e.target.value)} required />
+        <button className='voltar-redirect-button' onClick={handleVoltarRedirect}>
+        Voltar
+        </button>
         <input className='form-submit' type="submit" value="Entrar" />
       </form>
       <Link to='/signup' className='signup-text-link'>Não tem uma conta? Cadastre-se</Link>
