@@ -1,40 +1,40 @@
 import ProductForm from "../components/ProductForm"
 import { useState, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 export default function EditarProduto(){
 
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
-    const [stock, setStock] = useState("");
-    const [id, setId] = useState("");
-    const [edit, setEdit] = useState(false);
-    const location = useLocation();
-    const navigate = useNavigate();
-    const url = 'http://localhost:3000/products';
+    const [name, setName] = useState("")
+    const [price, setPrice] = useState("")
+    const [stock, setStock] = useState("")
+    const [id, setId] = useState("")
+    const [edit, setEdit] = useState(false)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const url = 'http://localhost:3000/products'
 
     useEffect(() => {
         if (location.state?.product) {
-            const { product } = location.state;
-            setName(product.name);
-            setPrice(product.price);
-            setStock(product.stock);
-            setId(product.id);
-            setEdit(true);
+            const { product } = location.state
+            setName(product.name)
+            setPrice(product.price)
+            setStock(product.stock)
+            setId(product.id)
+            setEdit(true)
         }
-    }, [location.state]);
+    }, [location.state])
 
     const clearForm = () => {
-        setName("");
-        setPrice("");
-        setStock("");
-        setId("");
-        setEdit(false);
+        setName("")
+        setPrice("")
+        setStock("")
+        setId("")
+        setEdit(false)
     }
 
     const saveProduct = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const saveRequestParams = {
             method: edit ? "PUT" : "POST",
             headers: {
@@ -44,20 +44,20 @@ export default function EditarProduto(){
         }
 
         // Cria URL para salvar ou atualizar produto
-        const save_url = edit ? url + `/${id}` : url;
+        const save_url = edit ? url + `/${id}` : url
 
         // Faz a requisição HTTP
-        const res = await fetch(save_url, saveRequestParams);
-        await res.json();
+        const res = await fetch(save_url, saveRequestParams)
+        await res.json()
 
-        clearForm();
-        navigate('/product-table');
+        clearForm()
+        navigate('/product-table')
     }
 
     // Mudança dos estados ao digitar no formulário
-    const handleName = (e) => { setName(e.target.value) };
-    const handlePrice = (e) => { setPrice(e.target.value) };
-    const handleStock = (e) => { setStock(e.target.value) };
+    const handleName = (e) => { setName(e.target.value) }
+    const handlePrice = (e) => { setPrice(e.target.value) }
+    const handleStock = (e) => { setStock(e.target.value) }
 
     return (
         <div>
@@ -71,5 +71,5 @@ export default function EditarProduto(){
                 saveProduct={saveProduct}
             />
         </div>
-    );
+    )
 }

@@ -7,7 +7,7 @@ import Login from './routes/Login.jsx'
 import Signup from './routes/Signup.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import RotaProtegida from './components/RotaProtegida.jsx'
-import { AuthProvider } from './context/Auth';
+import { AuthProvider } from './context/Auth'
 import CadastroProduto from './routes/CadastroProduto.jsx'
 import TabelaProdutos from './routes/TabelaProdutos.jsx'
 import EditarProduto from './routes/EditarProduto.jsx'

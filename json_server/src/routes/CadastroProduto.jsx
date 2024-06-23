@@ -6,20 +6,20 @@ import { useNavigate } from 'react-router-dom'
 
 export default function CadastroProduto (){
 
-      const [products, setProducts] = useState([]);
-      const url = 'http://localhost:3000/products';
-      const navigate = useNavigate();
+      const [products, setProducts] = useState([])
+      const url = 'http://localhost:3000/products'
+      const navigate = useNavigate()
   
       useEffect(() => {
           // Lista todos os produtos
           const getProductsList = async () => {
-              const res = await fetch(url);
-              const data = await res.json();
-              setProducts(data);
+              const res = await fetch(url)
+              const data = await res.json()
+              setProducts(data)
           }
   
-          getProductsList();
-      }, []);
+          getProductsList()
+      }, [])
   
       const deleteProduct = async (id) => {
           // Faz a requisição HTTP
@@ -28,17 +28,17 @@ export default function CadastroProduto (){
               headers: {
                   "content-type": "application/json"
               },
-          });
+          })
   
-          const deletedProduct = await res.json();
+          const deletedProduct = await res.json()
           // Atualização da tabela
-          setProducts(products.filter(prod => prod.id !== deletedProduct.id));
+          setProducts(products.filter(prod => prod.id !== deletedProduct.id))
       }
   
       const editProduct = (id) => {
           // Navega para a página de cadastro com o produto a ser editado
-          const productToEdit = products.find(prod => prod.id === id);
-          navigate('/edit-product', { state: { product: productToEdit } });
+          const productToEdit = products.find(prod => prod.id === id)
+          navigate('/edit-product', { state: { product: productToEdit } })
       }
   
       return (
@@ -50,5 +50,5 @@ export default function CadastroProduto (){
                   <h3 style={{ marginBottom: '30px' }}>Nenhum produto cadastrado...</h3>
               )}
           </div>
-      );
+      )
   }

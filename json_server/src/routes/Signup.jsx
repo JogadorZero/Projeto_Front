@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import './Signup.css'
 
 export default function Signup() {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("")
+  const [password, setPassword] = useState("")
   const saveSignup = async (e) => {
-    e.preventDefault();
-    const newUser = { user, password };
+    e.preventDefault()
+    const newUser = { user, password }
 
     const clearForm1 = () => {
         setUser("")
@@ -22,11 +22,11 @@ export default function Signup() {
     });
 
     if (res.ok) {
-      console.log("Usuário cadastrado:", newUser);
+      console.log("Usuário cadastrado:", newUser)
       // Redirecionar ou limpar formulário após sucesso
       
     } else {
-      console.error("Erro ao cadastrar usuário");
+      console.error("Erro ao cadastrar usuário")
     }
     clearForm1()
     setEdit(false)

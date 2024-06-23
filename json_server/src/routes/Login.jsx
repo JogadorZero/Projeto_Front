@@ -7,7 +7,7 @@ export default function Login() {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
-  const { login } = useAuth();
+  const { login } = useAuth()
 
   const saveLogin = async (e) => {
     e.preventDefault()
@@ -18,9 +18,9 @@ export default function Login() {
     // Atualizar estado de autenticação e redirecionar
     if (data.length > 0) {
       console.log("Usuário logado:", data[0])
-      login();
+      login()
       // Redirecionar para a página de cadastro de produto
-      navigate('/product-table'); // Atualize para a rota correta do seu formulário de produtos
+      navigate('/product-table') // Atualize para a rota correta do seu formulário de produtos
     } else {
       console.error("Usuário ou senha incorretos")
     }

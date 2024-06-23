@@ -11,7 +11,7 @@ export default function App() {
   return (
     <>
       <NavBar/>
-      <div className='main-contenct'>
+      <div className='main-content'>
         <Outlet />
       </div>
       {location.pathname !== '/login' && <Footer />}

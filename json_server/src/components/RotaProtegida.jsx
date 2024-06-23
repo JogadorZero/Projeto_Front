@@ -1,15 +1,15 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../context/Auth'; // Certifique-se de que o caminho está correto
+import React from 'react'
+import { Navigate } from 'react-router-dom'
+import { useAuth } from '../context/Auth'
 
 const RotaProtegida = ({ children }) => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" />
   }
 
-  return children;
+  return children
 };
 
-export default RotaProtegida;
+export default RotaProtegida
