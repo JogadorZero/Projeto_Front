@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Signup.css'
 import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
   const saveSignup = async (e) => {
     e.preventDefault()
     const newUser = { user, password }
@@ -33,6 +35,10 @@ export default function Signup() {
     setEdit(false)
   };
 
+  const handleVoltarRedirect = () => {
+    navigate('/')
+  }
+
   return (
     <div className='signup-container'>
       <h2>Criar Conta</h2>
@@ -41,6 +47,7 @@ export default function Signup() {
         <input className='form-input' value={user} type="text" name="usuario" onChange={(e) => setUser(e.target.value)} required />
         <label className='form-label' htmlFor="senha">Senha</label>
         <input className='form-input' value={password} type="password" name="senha" onChange={(e) => setPassword(e.target.value)} required />
+        <button className='voltar-redirect-button' onClick={handleVoltarRedirect}>Voltar</button>
         <input className='form-submit' type='submit' value='Cadastrar' />
       </form>
       <Link to='/login' className='signup-text-link'>Já tem uma conta? Entre</Link>
