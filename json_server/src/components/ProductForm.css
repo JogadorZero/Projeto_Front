@@ -45,3 +45,39 @@
   .espaco{
     margin-top: 10px;
   }
+
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.button-voltar {
+  order: 1;
+  background-color: #ea2e3b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-voltar:hover {
+  background-color: #500e13;
+}
+
+.button-cadastrar {
+  order: 2;
+  background-color: #ea2e3b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-cadastrar:hover {
+  background-color: #500e13;
+}

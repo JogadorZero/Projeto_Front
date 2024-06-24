@@ -13,13 +13,10 @@ export default function ProductForm({ name, price, stock, handleName, handlePric
             <input className='form-input' value={price} type="number" name="preco" onChange={(e) => handlePrice(e)} required/>
             <label className='form-label' htmlFor="estoque">Estoque:</label>
             <input className='form-input' value={stock} type="number" name="estoque" onChange={(e) => handleStock(e)} required/>
-            <input className='form-submit' type="submit" value="Cadastrar" />
-            <div className='espaco'>
-            <Link to="/product-table">
-                <input className='form-submit' type='submit' value='voltar' />
-            </Link>
+            <div className="actions-container">
+                <Link to="/product-table" className="button-voltar">Voltar</Link>
+                <button type="submit" className="button-cadastrar" onClick={saveProduct}>Cadastrar</button>
             </div>
-
         </form>
       </div>
     )

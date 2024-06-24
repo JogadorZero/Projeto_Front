@@ -80,10 +80,16 @@
       "stock": "40"
     },
     {
-      "id": "o5p6",
+      "id": "4399",
       "name": "Sonho",
-      "price": "1.50",
-      "stock": "70"
+      "price": "3",
+      "stock": "20"
+    },
+    {
+      "id": "35ed",
+      "name": "Rosca doce",
+      "price": "5",
+      "stock": "15"
     }
   ]
 }
