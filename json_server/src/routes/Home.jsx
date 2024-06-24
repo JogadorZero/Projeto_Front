@@ -6,5 +6,6 @@ export default function Home(){
         <div className="home-container">
             <h2>Bem-vindo!</h2>
         </div>
+        
     )
 }

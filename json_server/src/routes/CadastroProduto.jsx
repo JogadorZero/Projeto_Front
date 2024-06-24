@@ -42,6 +42,7 @@ export default function CadastroProduto (){
       }
   
       return (
+        <>
           <div>
               {products.length >= 0 ? (
                   <ProductTable products={products} deleteProduct={deleteProduct} editProduct={editProduct} />
@@ -50,5 +51,7 @@ export default function CadastroProduto (){
                   <h3 style={{ marginBottom: '30px' }}>Nenhum produto cadastrado...</h3>
               )}
           </div>
+
+          </>
       )
   }
