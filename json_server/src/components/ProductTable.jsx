@@ -1,8 +1,10 @@
 import classes from './ProductTable.module.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function ProductTable({products, deleteProduct, editProduct}) {
+    const navigate = useNavigate();
 
     const currencyFormatter = (value) => {
         return parseFloat(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -42,15 +44,9 @@ export default function ProductTable({products, deleteProduct, editProduct}) {
                     ))}
                 </tbody>
             </table>
-            <div className='espaco'>
-            <Link to="/">
-                <input className='form-submit' type='submit' value='voltar' />
-            </Link>
-            </div>
-            <div className='espaco'>
-            <Link to="/product-form">
-                <input className='form-submit' type='submit' value='Cadastrar' />
-            </Link>
+            <div className="actions-container">
+                <button className="button-voltar" onClick={() => navigate('/')}>Voltar</button>
+                <button className="button-cadastrar" onClick={() => navigate('/product-form')}>Cadastrar</button>
             </div>
         </div>
         </> 
