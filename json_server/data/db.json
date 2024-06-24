@@ -38,28 +38,52 @@
   ],
   "products": [
     {
-      "id": "8572",
-      "name": "pera",
-      "price": "4",
-      "stock": "15"
+      "id": "a1b2",
+      "name": "Pão Francês",
+      "price": "0.50",
+      "stock": "100"
     },
     {
-      "id": "66d0",
-      "name": "Banana",
-      "price": "5",
-      "stock": "20"
+      "id": "c3d4",
+      "name": "Pão de Queijo",
+      "price": "0.75",
+      "stock": "80"
     },
     {
-      "id": "0351",
-      "name": "Caqui",
-      "price": "4.00",
+      "id": "e5f6",
+      "name": "Rosca Doce",
+      "price": "3.50",
+      "stock": "50"
+    },
+    {
+      "id": "g7h8",
+      "name": "Bolo de Cenoura",
+      "price": "10.00",
       "stock": "30"
     },
     {
-      "id": "055f",
-      "name": "abacaxi",
-      "price": "5",
-      "stock": "10"
+      "id": "i9j0",
+      "name": "Torta de Frango",
+      "price": "12.00",
+      "stock": "20"
+    },
+    {
+      "id": "k1l2",
+      "name": "Croissant",
+      "price": "2.00",
+      "stock": "60"
+    },
+    {
+      "id": "m3n4",
+      "name": "Biscoito de Polvilho",
+      "price": "5.00",
+      "stock": "40"
+    },
+    {
+      "id": "o5p6",
+      "name": "Sonho",
+      "price": "1.50",
+      "stock": "70"
     }
   ]
 }
