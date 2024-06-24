@@ -1,14 +1,17 @@
 import './Login.css'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/Auth'
 import { Link } from "react-router-dom"
+
+
 
 export default function Login() {
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const { login } = useAuth()
+
 
   const handleVoltarRedirect = () => {
     navigate('/')
@@ -27,7 +30,7 @@ export default function Login() {
       // Redirecionar para a página de cadastro de produto
       navigate('/product-table') // Atualize para a rota correta do seu formulário de produtos
     } else {
-      console.error("Usuário ou senha incorretos")
+      alert('Usuário ou senha incorreto');
     }
   }
 
