@@ -11,11 +11,13 @@ import { AuthProvider } from './context/Auth'
 import CadastroProduto from './routes/CadastroProduto.jsx'
 import TabelaProdutos from './routes/TabelaProdutos.jsx'
 import EditarProduto from './routes/EditarProduto.jsx'
+import Error from './routes/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <Error/>,
     children: [
       {
         path: '/',

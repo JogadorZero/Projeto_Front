@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import './Signup.css'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
@@ -29,10 +29,9 @@ export default function Signup() {
       // Redirecionar ou limpar formulário após sucesso
       
     } else {
-      console.error("Erro ao cadastrar usuário")
+      alert("Erro ao cadastrar usuário")
     }
     clearForm1()
-    setEdit(false)
   };
 
   const handleVoltarRedirect = () => {
