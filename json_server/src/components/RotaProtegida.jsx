@@ -3,9 +3,15 @@ import { Navigate } from 'react-router-dom'
 import { useAuth } from '../context/Auth'
 
 const RotaProtegida = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { user, loading } = useAuth();
 
-  if (!isAuthenticated) {
+  // Mostrar loading enquanto verifica autenticação
+  if (loading) {
+    return <div className="loading">Carregando...</div>
+  }
+
+  // Redirecionar para login se não estiver autenticado
+  if (!user) {
     return <Navigate to="/login" />
   }
 

@@ -8,10 +8,11 @@ import Signup from './routes/Signup.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import RotaProtegida from './components/RotaProtegida.jsx'
 import { AuthProvider } from './context/Auth'
-import CadastroProduto from './routes/CadastroProduto.jsx'
-import TabelaProdutos from './routes/TabelaProdutos.jsx'
-import EditarProduto from './routes/EditarProduto.jsx'
 import Error from './routes/Error.jsx'
+import Estoque from './routes/Estoque.jsx'
+import Pedidos from './routes/Pedidos.jsx'
+import Caixa from './routes/Caixa.jsx'
+import Compras from './routes/Compras.jsx'
 
 const router = createBrowserRouter([
   {
@@ -36,30 +37,37 @@ const router = createBrowserRouter([
         element: <Signup />, //Rota para a tela de Cadastro
       },
       {
-        path: 'product-table',
+        path: 'estoque',
         element: (
           <RotaProtegida>
-            <CadastroProduto/>
+            <Estoque/>
           </RotaProtegida>
         )
       },
       {
-        path: 'product-form',
+        path: 'pedidos',
         element: (
           <RotaProtegida>
-            <TabelaProdutos/>
+            <Pedidos/>
           </RotaProtegida>
         )
       },
       {
-        path: 'edit-product',
+        path: 'caixa',
         element: (
           <RotaProtegida>
-            <EditarProduto/>
+            <Caixa/>
           </RotaProtegida>
         )
-      }
-
+      },
+      {
+        path: 'compras',
+        element: (
+          <RotaProtegida>
+            <Compras/>
+          </RotaProtegida>
+        )
+      },
     ],
   },
 ])

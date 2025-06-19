@@ -5,7 +5,16 @@ import { useAuth } from '../context/Auth';
 
 export default function NavBar(){
     const location = useLocation()
-    const { isAuthenticated } = useAuth()
+    const { user, logout } = useAuth()
+
+    const handleLogout = async () => {
+        const result = await logout()
+        if (result.success) {
+            console.log("Usuário deslogado")
+        } else {
+            console.error("Erro ao fazer logout:", result.error)
+        }
+    }
 
     if (location.pathname === '/login' || location.pathname === '/signup') {
         return null
@@ -19,11 +28,25 @@ export default function NavBar(){
                 </Link>
             </div>
             <div className='navbar-right'>
-            {isAuthenticated && (
-        <Link to="/product-table" className="nav-link">Produtos</Link>
-      )}
-                <Link to='/signup' className='nav-link'>Cadastrar</Link>
-                <Link to='/login' className='nav-link'>Login</Link>
+                {user ? (
+                    <>
+                        <Link to="/estoque" className="nav-link">Estoque</Link>
+                        <Link to="/pedidos" className="nav-link">Pedidos</Link>
+                        <Link to="/caixa" className="nav-link">Caixa</Link>
+                        <Link to="/compras" className="nav-link">Compras</Link>
+                        <div className="user-info">
+                            <span>Olá, {user.displayName || user.email}</span>
+                            <button onClick={handleLogout} className="logout-button">
+                                Sair
+                            </button>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <Link to='/signup' className='nav-link'>Cadastrar</Link>
+                        <Link to='/login' className='nav-link'>Login</Link>
+                    </>
+                )}
             </div>
         </nav>
     )
